@@ -1,5 +1,49 @@
+:root {
+  --font-sans: 'Roboto', sans-serif;
+  --font-mono: 'Roboto Mono', monospace;
+  --brand-primary: #262861;
+  --brand-accent: #FFCC33;
+  --brand-button-hover: #F7931D;
+  --white: #fff;
+}
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.slider-arrow {
+  background-color: var(--brand-primary);
+  border-radius: 100%;
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  cursor: pointer;
+  color: var(--white);
+}
 
+.slider-arrow:hover {
+  background-color: var(--white);           
+  color: var(--brand-primary);              
+}
 
+.primary-button {
+  display: flex;
+  width: 250px;
+  flex-grow: 0;
+  column-gap: 10px;
+  color: var(--brand-primary);   
+  background-color: var(--brand-accent);  
+  font-family: var(--font-mono);
+  font-weight: bold;                   
+  font-size: 14px;                    
+  padding: 16px 32px;
+  line-height: 18px;
+  border-radius: 34px;
+  border-style: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  align-items: center;
+  margin-top: auto;
+}
+
+.primary-button:hover {
+  background-color: var(--brand-button-hover);                     
+}
