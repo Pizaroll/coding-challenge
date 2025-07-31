@@ -1,26 +1,133 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Ghost Coding Challenge</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghost Coding Challenge</title>
 
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="app.js"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700&family=Roboto+Mono&display=swap" rel="stylesheet" />
-        <link href="./input.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700&family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./input.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+  </head>
 </html>
 
 <body>
-    <section>
+  <section>
+    <div
+      class="bg-gradient-to-br from-[#F15C22] to-[#F7931D] text-white py-32 relative"
+    >
+      <div
+        class="cr-margin max-w-screen-2xl m-auto grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-6 items-start"
+      >
+        <!-- LEFT GRID: arrows + title + description & button -->
+        <div class="lg:col-span-4 xl:ml-20 space-y-6 flex flex-col items-start">
+          <div id="carousel-controls" class="flex gap-4 mb-0">
+            <button class="slider-arrow" id="btnPrev">
+              <svg
+                class="w-[18px] h-[16px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 18 16"
+              >
+                <path
+                  d="M3.04482 7.229L8.43118 1.84264L7.37052 0.781982L0.173523 7.97898L7.37052 15.176L8.43118 14.1153L3.04487 8.729L17.2342 8.72901V7.22901L3.04482 7.229Z"
+                />
+              </svg>
+            </button>
+            <button class="slider-arrow" id="btnNext">
+              <svg
+                class="w-[18px] h-[16px]"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 18 16"
+              >
+                <path
+                  d="M15.1129 7.229L9.72654 1.84264L10.7872 0.781982L17.9842 7.97898L10.7872 15.176L9.72654 14.1153L15.1128 8.729L0.923523 8.72901V7.22901L15.1129 7.229Z"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <h2 id="title" class="text-2xl font-bold leading-tight"></h2>
+
+          <!-- Show description & button only on desktop -->
+          <div class="hidden lg:block space-y-4 mt-4">
+            <p id="description"><!-- dynamic descriptions --></p>
+            <button class="primary-button">
+              More Client Stories
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="12px"
+                height="10px"
+                stroke-width="1"
+                fill="none"
+                viewBox="0 0 18 15"
+              >
+                <path
+                  stroke="currentColor"
+                  d="M9.333 1 16 7.667l-6.667 6.666M16 7.667H0"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT GRID: carousel -->
+        <div class="lg:col-span-8 w-full relative">
+          <div id="story-carousel" class="splide my-8 max-w-2xl mx-auto">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <!-- Slides injected by js data -->
+              </ul>
+            </div>
+          </div>
+
+          <!-- Description & button for mobile -->
+          <div class="block lg:hidden mt-4 space-y-4">
+            <p id="description">Test<!-- dynamic description --></p>
+            <button class="primary-button">
+              More Client Stories
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="12px"
+                height="10px"
+                stroke-width="1"
+                fill="none"
+                viewBox="0 0 18 15"
+              >
+                <path
+                  stroke="currentColor"
+                  d="M9.333 1 16 7.667l-6.667 6.666M16 7.667H0"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section>
         <div class="bg-gradient-to-br from-[#F15C22] to-[#F7931D] text-white py-32 relative"> 
-            <div class="grid"> 
-                <div>
-                    <div>
+            <div class="cr-margin max-w-screen-2xl m-auto grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-6 items-center"> 
+                <div class="lg:col-span-4 xl:ml-20 lg:space-y-7 items-center lg:items-start flex flex-row lg:flex-col gap-x-6">
+                    <div id="carousel-controls" class="flex gap-4 mb-4">
                         <button class="slider-arrow" id="btnPrev">
                             <svg
                               class="w-[18px] h-[16px]"
@@ -48,10 +155,18 @@
                             </svg>
                         </button>
                     </div>
-                    <div>dynamic titles</div>
+                    <h2 id="title" class="text-2xl font-bold leading-tight"></h2>
                 </div>
-                <div>video holder</div>
-                <div> description and more button
+                <div class="lg:col-span-8 w-full 2xl:w-[calc(90%+3rem+40vw)] relative" >
+                    <div id="story-carousel" class="splide my-8 max-w-2xl mx-auto">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-4 space-y-8 xl:ml-20">
                     <div><p id="description"></p></div>
                     <button class="primary-button">
                         More Client Stories
@@ -73,5 +188,8 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="app.js"></script>
 </body>
