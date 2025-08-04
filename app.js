@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pauseOnHover: true,
     video: {
       mute: false,
-      autoplay: true,
+      autoplay: false,
       loop: false,
     },
   }).mount(window.splide.Extensions);
