@@ -43,11 +43,18 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     arrows: false,
     pagination: true,
+    // Pagination custom styling
     classes: {
       pagination: "splide__pagination frost-button",
     },
-    autoplay: false,
-    pauseOnHover: true,
+    // Mobile-specific options
+    breakpoints: {
+    1024: { 
+      perPage: 1,
+      padding: {right: 0,},
+    },
+  },
+    // Video settings
     video: {
       mute: false,
       autoplay: false,
@@ -98,8 +105,3 @@ document.addEventListener("DOMContentLoaded", () => {
     updateInfo(newIndex);
   });
 });
-
-
-{/* <div data-splide-youtube="https://www.youtube.com/watch?v=${slide.videoId}">
-<img src="${slide.imgURL}" alt="${slide.title}" class="z-10 relative object-center object-cover h-full w-full placeholder-image">
-</div> */}
