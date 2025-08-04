@@ -53,3 +53,16 @@
   justify-content: left;
   top: 10px; 
 }
+
+@media (min-width: 1024px) {
+  .lr-margin {
+      padding-left: 5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .lr-margin {
+      padding-left: 3rem;
+      padding-right: 3rem;
+  }
+}
