@@ -24,8 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
   slides.forEach((slide) => {
     const li = document.createElement("li");
     li.className = "splide__slide";
+    li.setAttribute("data-splide-youtube", "https://www.youtube.com/watch?v=${slide.videoId}");
     li.innerHTML = `
-      <div data-splide-youtube="https://www.youtube.com/watch?v=${slide.videoId}">
+      <div>
         <img src="${slide.imgURL}" alt="${slide.title}" class="z-10 relative object-center object-cover h-full w-full placeholder-image">
       </div>
     `;
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pauseOnHover: true,
     video: {
       mute: false,
-      autoplay: false,
+      autoplay: true,
       loop: false,
     },
   }).mount(window.splide.Extensions);
@@ -97,3 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
     updateInfo(newIndex);
   });
 });
+
+
+{/* <div data-splide-youtube="https://www.youtube.com/watch?v=${slide.videoId}">
+<img src="${slide.imgURL}" alt="${slide.title}" class="z-10 relative object-center object-cover h-full w-full placeholder-image">
+</div> */}
