@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   slides.forEach((slide) => {
     const li = document.createElement("li");
     li.className = "splide__slide";
-    li.setAttribute("data-splide-youtube", "https://www.youtube.com/watch?v=${slide.videoId}");
+    li.setAttribute("data-splide-youtube", `https://www.youtube.com/watch?v=${slide.videoId}`);
     li.innerHTML = `
       <div>
         <img src="${slide.imgURL}" alt="${slide.title}" class="z-10 relative object-center object-cover h-full w-full placeholder-image">
