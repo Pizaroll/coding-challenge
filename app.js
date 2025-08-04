@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     li.setAttribute("data-splide-youtube", `https://www.youtube.com/watch?v=${slide.videoId}`);
     li.innerHTML = `
       <div>
-        <img src="${slide.imgURL}" alt="${slide.title}" class="z-10 relative object-center object-cover h-full w-full placeholder-image">
+        <img src="${slide.imgURL}" alt="${slide.title}" class="relative object-center object-cover h-full w-full placeholder-image">
       </div>
     `;
     list.appendChild(li);
